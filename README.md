@@ -22,8 +22,11 @@ This project is based of the idea of the mandela effect, where the influence of 
 
 ## License
 
-## Developers:
-- Tristan John Wilson
-- Ben Weaver
-- Nikhil Suresh
-- Nick Otto
+The license for this project is under the [LICENSE.txt](https://github.com/CPSC4720Mandela/mandela/blob/main/LICENSE.txt "Link to the LICENSE.txt file") file.
+
+## Developers
+
+- [Nick Otto](https://github.com/nicholas-otto "Link to Nick's GitHub")
+- [Nikhil Suresh](https://github.com/nik1097 "Link to Nikhil's GitHub")
+- [Ben Weaver](https://github.com/benjweaver "Link to Ben's GitHub")
+- [Tristan John Wilson](https://github.com/hktristan "Link to Tristan's GitHub")
