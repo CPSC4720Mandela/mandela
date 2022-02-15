@@ -5,7 +5,7 @@
 This project is based of the idea of the mandela effect, where the influence of culture or another external force cause a large group of people to remember something incorrectly. Some specific examples of this is if curious george has a tail and whether the cartoon is spelled Looney Toons or Looney Tunes. There will be several types of gameplay implemented, with options including puzzle of the day and continuous play. Each puzzle will consist of the number of options (typically two) with the user having one opportunity to select the single correct option. After an option is selected then the user will be notified if they were correct or incorrect in their selection. This information will be stored for their profile so they can see how they rank against other players, including their friends if they invite them to play. 
 
 ## Built With
-Java
+Java, SQL, Python
 
 ## Installation
 Option 1:
