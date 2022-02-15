@@ -23,6 +23,9 @@ This project is open source, meaning any individual that is interested may use o
 ## Roadmap
 This project will be implemented over the next few months, the first code will be submitted by Febraury 21 2022 and the first version of the project will be uploaded by April 15 2022. Additional information about iterations between these two points will be updated soon.
 
+## Release History
+
+
 ## Contributing
 
 1. Obtain permission from (nickj.0770@gmail.com)
