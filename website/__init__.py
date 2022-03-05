@@ -2,6 +2,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from os import path
+from flask_login import LoginManager
 
 db = SQLAlchemy()
 DB_NAME = "mandela.db"
@@ -20,8 +21,15 @@ def create_app():
     app.register_blueprint(auth, url_prefix = '/') 
     
     from .models import User, Game, Leaderboard #runs the class files before database has been created
-    
     create_database(app)
+    
+    login_manager = LoginManager()
+    login_manager.login_view = 'auth.login' #if login required where to redirect
+    login_manager.init_app(app)
+    
+    @login_manager.user_loader
+    def load_user(id):
+        return User.query.get((int(id))) #tells flask how user is loaded - get looks for primary key by default
     return app
 
 def create_database(app):
