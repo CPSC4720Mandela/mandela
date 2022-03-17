@@ -11,7 +11,9 @@ def create_app():
     app = Flask(__name__) #initialize our app
     app.config['SECRET_KEY'] = 'asdaysda jyhdajhdbaj' #encrypts cookies or session data related to the website
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}' #f-string can take python code in {} and will be evalluated as a string
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     db.init_app(app)
+   
 
     # import blueprints
     from .views import views
