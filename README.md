@@ -48,5 +48,4 @@ The license for this project is under the [LICENSE.txt](https://github.com/CPSC4
 
 ## Wireframe
 
-<a href = "https://github.com/CPSC4720Mandela/mandela/blob/267ed867ac506b08c376220ff0dcde02e4e2f525/WireFrame.pdf" />
-<img src = "https://github.com/CPSC4720Mandela/mandela/blob/267ed867ac506b08c376220ff0dcde02e4e2f525/WireFrame.pdf" />
+![alt text](https://github.com/CPSC4720Mandela/mandela/blob/80676711b6018efca22261e496b232f824f2ac67/WireFrame.jpg?raw=true "Click to go WireFrame.jpg")
