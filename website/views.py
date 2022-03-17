@@ -17,3 +17,7 @@ def leaderboard():
 @views.route('/settings')
 def settings():
     return render_template("settings.html", user = current_user)
+
+@views.route('/game')
+def game():
+    return "<h1> Game Page </h1><p>Placeholder for game template</p>"
