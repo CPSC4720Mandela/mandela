@@ -45,3 +45,7 @@ The license for this project is under the [LICENSE.txt](https://github.com/CPSC4
 - [Nikhil Suresh](https://github.com/nik1097 "Link to Nikhil's GitHub")
 - [Ben Weaver](https://github.com/benjweaver "Link to Ben's GitHub")
 - [Tristan John Wilson](https://github.com/hktristan "Link to Tristan's GitHub")
+
+## Wireframe
+
+![alt text](https://github.com/CPSC4720Mandela/mandela/blob/80676711b6018efca22261e496b232f824f2ac67/WireFrame.jpg?raw=true "Click to go WireFrame.jpg")
