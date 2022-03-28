@@ -1,6 +1,26 @@
 {% extends "base.html" %} {% block title %}Home{% endblock %} 
 {% block content %} 
-<h1> This is the home page</h1>
-<br />
-<button type="submit" class="btn btn-primary">Start Game</button>
-{% endblock %} 
+  <form method="POST">
+    <h3 align="center">Home</h3>
+    <style>
+      .button {
+        background-color: #671cc9;
+        border: none;
+        color: white;
+        padding: 20px 34px;
+        text-align: center;
+        text-decoration: none;
+        display: block;
+        font-size: 20px;
+        margin: 4px 2px;
+        cursor: pointer;
+        width: 30%;
+      }
+    </style>
+    <center>
+    <a class="button" id="Quickstart" href="/leaderboard">Quickstart</a>
+    <a class="button" id="SignIn" href="/login">Sign In</a>
+    <a class="button" id="AboutUs" href="/leaderboard">About Us</a>
+  </center>
+  </form>
+  {% endblock %}
