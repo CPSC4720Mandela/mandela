@@ -1,1 +1,31 @@
-<h1> This is the settings page</h1>
+{% extends "base.html" %} {% block title %}Settings{% endblock %} 
+{% block content %} 
+  <form method="POST">
+    <h3 align="center">Settings</h3>
+    <style>
+      .button {
+        background-color: #671cc9;
+        border: none;
+        color: white;
+        padding: 20px 34px;
+        text-align: center;
+        text-decoration: none;
+        display: block;
+        font-size: 20px;
+        margin: 4px 2px;
+        cursor: pointer;
+        width: 30%;
+      }
+    </style>
+    <center>
+        <div>
+            <input type="color" id="color" name="color"
+            value="#671cc9">
+     <label for="Color">Color</label>
+    </div>
+    <a class="button" id="ChangeUsername" href="/signup">Change Username</a>
+    <a class="button" id="ChangePassword" href="/signup">Change Password</a>
+    <a class="button" id="DeleteAccount" href="/logout">Delete Account</a>
+  </center>
+  </form>
+  {% endblock %}

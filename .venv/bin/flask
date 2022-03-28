@@ -1,0 +1,10 @@
+#!/bin/sh
+'''exec' "/Users/nickotto/Desktop/spring 2022/cpsc 4720/localSetup/mandela/.venv/bin/python" "$0" "$@"
+' '''
+# -*- coding: utf-8 -*-
+import re
+import sys
+from flask.cli import main
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
+    sys.exit(main())
