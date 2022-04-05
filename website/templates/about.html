@@ -1,0 +1,44 @@
+{% extends "base.html" %} {% block title %}About{% endblock %} 
+{% block content %}
+<form method="POST">
+    <h3 align="center">About</h3>
+    <style>
+      .button {
+        background-color: #671cc9;
+        border: none;
+        color: white;
+        padding: 20px 34px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        margin: 4px 30px;
+        cursor: pointer;
+        width: 250px;
+      }
+      .column {
+        float: left;
+        width: 50%;
+      }
+
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+     }
+    </style>
+    <center>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/KqpInBgFQPs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </center>
+    <div class="row">
+        <div class="column">
+            <h2>About Us</h2>
+            <p id="About Us">This is a description of the team including Benjamin James Weaver, Nick Otto, Nikhil Suresh and Tristan John G Wilson!</p>
+    </div>
+        <div class="column">
+            <h2>Game Description</h2>
+            <p id="Game Description">This is a game featuring the Mandela effect, please select the option based on which you think the original version of the image is and you will be notified if you are wrong or right.</p>
+    </div>
+    </div>
+</form>
+{% endblock %}

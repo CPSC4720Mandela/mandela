@@ -1,2 +1,43 @@
 {% extends "base.html" %} {% block title %}Game{% endblock %} 
-{% block content %} 
+{% block content %}
+<form method="POST">
+    <h3 align="center">Game</h3>
+    <style>
+      .button {
+        background-color: #671cc9;
+        border: none;
+        color: white;
+        padding: 20px 34px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        margin: 4px 30px;
+        cursor: pointer;
+        width: 250px;
+      }
+    </style>
+    <center>
+        <img src="../static/images/Option1.jpg" alt="Option 1" width="300" height="300">
+        <img src="../static/images/Option2.jpg" alt="Option 2" width="300" height="300">
+        <br>
+        <script>
+          function Correct()
+          {
+           document.getElementById('Answer').innerHTML = 'Answer: Correct!!';
+          }
+          function Incorrect()
+          {
+           document.getElementById('Answer').innerHTML = 'Answer: Incorrect!!';
+          }
+        </script>
+        <a class="button" id="Option1" onclick="Incorrect()">This is the original</a>
+        <a class="button" id="Option2" onclick="Correct()">This is the original</a>
+        <br>
+        <br>
+        <p id="Answer">Answer:</p>
+    </center>
+  </form>
+  {% endblock %}
+        
+

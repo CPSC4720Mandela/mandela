@@ -20,4 +20,8 @@ def settings():
 
 @views.route('/game')
 def game():
-    return "<h1> Game Page </h1><p>Placeholder for game template</p>"
+    return render_template("game.html", user = current_user)
+
+@views.route('/about')
+def about():
+    return render_template("about.html", user = current_user)
