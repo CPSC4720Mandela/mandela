@@ -7,6 +7,14 @@ class Game(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     desc = db.Column(db.String(150))
     date = db.Column(db.DateTime(timezone = True), default = func.now())
+    score = db.Column(db.Integer)
+
+class Question(db.Model):
+    id = db.Column(db.Integer, primary_key = True)
+    question = db.Column(db.String(200))
+    correct_option = db.Column()
+    other_option = db.Column()
+    score_value = db.Column(db.Integer)
     
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key = True)
