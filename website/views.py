@@ -21,7 +21,16 @@ def settings():
 @views.route('/game')
 def game():
     return render_template("game.html", user = current_user)
-
+'''
+def game():
+    def game():
+    if request.method == 'GET':
+        # get the questions and send to the front end
+    elif request.method == 'POST':
+        # get score from front end and send to db
+    return render_template("game.html", user = current_user)
+    
+'''
 @views.route('/about')
 def about():
     return render_template("about.html", user = current_user)

@@ -58,11 +58,3 @@ def sign_up():
             return redirect(url_for('auth.login'))
             
     return render_template("signup.html", user = current_user)
-
-@auth.route('/game', methods = ['GET', 'POST'])
-def game():
-    if request.method == 'GET':
-        # get the questions and send to the front end
-    elif request.method == 'POST':
-        # get score from front end and send to db
-    return render_template("game.html", user = current_user)
