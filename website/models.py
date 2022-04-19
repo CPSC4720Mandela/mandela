@@ -5,16 +5,11 @@ from sqlalchemy.sql import func
 
 class Game(db.Model):
     id = db.Column(db.Integer, primary_key = True)
-    desc = db.Column(db.String(150))
+    desc = db.Column(db.String(350))
     date = db.Column(db.DateTime(timezone = True), default = func.now())
-    score = db.Column(db.Integer)
-
-class Question(db.Model):
-    id = db.Column(db.Integer, primary_key = True)
-    question = db.Column(db.String(200))
-    correct_option = db.Column()
-    other_option = db.Column()
-    score_value = db.Column(db.Integer)
+    file1 = db.Column(db.String(350))
+    file2 = db.Column(db.String(350))
+    correct_option = db.Column(db.String(50))
     
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key = True)
@@ -27,4 +22,4 @@ class Leaderboard(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     game_id = db.Column(db.Integer, db.ForeignKey('game.id'))
     date = db.Column(db.DateTime(timezone = True), default = func.now())
-    points = db.Column(db.Integer)
+    points = db.Column(db.Float)
