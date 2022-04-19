@@ -1,7 +1,9 @@
 # stores the url endpoints for the actual functioning of website
 # standard routes(url) to our webpage other than authentication
 from flask import Blueprint, render_template
+from .models import Game
 from flask_login import login_required, current_user
+import datetime
 
 views = Blueprint('views', __name__)
 
@@ -20,7 +22,11 @@ def settings():
 
 @views.route('/game', methods=['GET', 'POST'])
 def game():
-    return render_template("game.html", user = current_user)
+    today = datetime.date.today()
+    game = Game.query.filter_by(date=today).first()
+    path1 = game.file1
+    path2 = game.file2
+    return render_template("game.html", path1, path2, user = current_user)
 
 '''
 def game():

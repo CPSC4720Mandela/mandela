@@ -31,7 +31,7 @@ def create_app():
     
     @login_manager.user_loader
     def load_user(id):
-        return User.query.get((int(id))) #tells flask how user is loaded - get looks for primary key by default
+        return User.query.get(int(id)) #tells flask how user is loaded - get looks for primary key by default
     return app
 
 def create_database(app):
