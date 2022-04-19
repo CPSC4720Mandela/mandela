@@ -5,7 +5,6 @@ from sqlalchemy.sql import func
 
 class Game(db.Model):
     id = db.Column(db.Integer, primary_key = True)
-    desc = db.Column(db.String(350))
     date = db.Column(db.DateTime(timezone = True), default = func.now())
     file1 = db.Column(db.String(350))
     file2 = db.Column(db.String(350))
