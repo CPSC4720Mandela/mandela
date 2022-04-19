@@ -18,12 +18,12 @@ def leaderboard():
 def settings():
     return render_template("settings.html", user = current_user)
 
-@views.route('/game')
+@views.route('/game', methods=['GET', 'POST'])
 def game():
     return render_template("game.html", user = current_user)
+
 '''
 def game():
-    def game():
     if request.method == 'GET':
         # get the questions and send to the front end
     elif request.method == 'POST':
