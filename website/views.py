@@ -7,7 +7,6 @@ import datetime
 
 views = Blueprint('views', __name__)
 
-
 @views.route('/') # decorator
 def home():
     return render_template("home.html", user = current_user)
@@ -22,11 +21,8 @@ def settings():
 
 @views.route('/game', methods=['GET', 'POST'])
 def game():
-    today = datetime.date.today()
-    game = Game.query.filter_by(date=today).first()
-    path1 = game.file1
-    path2 = game.file2
-    return render_template("game.html", path1, path2, user = current_user)
+    game = Game.query.filter_by(dateofpuzzle = str(datetime.date.today())).first()
+    return render_template("game.html", user = current_user, path1 = '..' + game.file1, path2 = '..'+game.file2)
 
 '''
 def game():

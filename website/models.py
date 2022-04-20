@@ -5,7 +5,7 @@ from sqlalchemy.sql import func
 
 class Game(db.Model):
     id = db.Column(db.Integer, primary_key = True)
-    date = db.Column(db.DateTime(timezone = True), default = func.now())
+    dateofpuzzle = db.Column(db.String(30))
     file1 = db.Column(db.String(350))
     file2 = db.Column(db.String(350))
     correct_option = db.Column(db.String(50))
