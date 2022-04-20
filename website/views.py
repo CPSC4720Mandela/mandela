@@ -22,7 +22,7 @@ def settings():
 @views.route('/game', methods=['GET', 'POST'])
 def game():
     game = Game.query.filter_by(dateofpuzzle = str(datetime.date.today())).first()
-    return render_template("game.html", user = current_user, path1 = '..' + game.file1, path2 = '..'+game.file2)
+    return render_template("game.html", user = current_user, path1 = '..' + game.file1, path2 = '..'+game.file2, correct_answer = game.correct_option)
 
 '''
 def game():
