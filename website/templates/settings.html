@@ -1,6 +1,7 @@
 {% extends "base.html" %} {% block title %}Settings{% endblock %} 
 {% block content %} 
   <form method="POST">
+    <body>
     <h3 align="center">Settings</h3>
     <style>
       .button {
@@ -18,14 +19,21 @@
       }
     </style>
     <center>
-        <div>
-            <input type="color" id="color" name="color"
-            value="#671cc9">
-     <label for="Color">Color</label>
-    </div>
+      <div>
+        <input type="color" id="background_color" name="background_color" value="#671cc9" onchange="changeBg(this)">
+        <label for="background_color">Background Color</label>
+        <br>
+        <script>
+          function changeBg(element){
+            document.body.style.backgroundColor=element.value;
+            sessionStorage.setItem("bg", element.value);
+          }
+        </script>
+      </div>
     <a class="button" id="ChangeUsername" href="/signup">Change Username</a>
     <a class="button" id="ChangePassword" href="/signup">Change Password</a>
     <a class="button" id="DeleteAccount" href="/logout">Delete Account</a>
   </center>
+</body>
   </form>
   {% endblock %}
