@@ -3,7 +3,7 @@
 from flask import Blueprint, render_template, request
 from .models import Game, User, Leaderboard
 from flask_login import login_required, current_user
-from sqlalchemy import update
+from sqlalchemy import update, text
 from . import db
 import datetime
 
@@ -13,10 +13,16 @@ views = Blueprint('views', __name__)
 def home():
     return render_template("home.html", user = current_user)
 
-@views.route('/leaderboard', methods=['GET', 'POST'])
+@views.route('/leaderboard')
 def leaderboard():
+    #for score in leaderboard:
     
-    return render_template("leaderboard.html", user = current_user)
+    query = 'select user_id, sum(points) from leaderboard group by game_id, user_id order by sum(points) desc limit 5;'
+    query = text(query)
+    scores = db.engine.execute(query)
+    points = [(row[0], row[1]) for row in scores]
+    return render_template("test.html", test = points)
+    #return render_template("leaderboard.html", user = current_user)
 
 @views.route('/settings')
 def settings():
