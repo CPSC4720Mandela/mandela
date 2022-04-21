@@ -24,8 +24,13 @@ def leaderboard():
     return render_template("test.html", test = points)
     #return render_template("leaderboard.html", user = current_user)
 
-@views.route('/settings')
+@views.route('/settings', methods=['GET', 'POST'])
 def settings():
+    if request.method == 'POST':
+        if request.form['del_account']:
+            db.engine.execute('delete from leaderboard where user_id = ?', current_user.get_id())
+            db.engine.execute('delete from user where id = ?', current_user.get_id())          
+            return render_template("test.html", test = 'Deleted user account!')
     return render_template("settings.html", user = current_user)
 
 @views.route('/game', methods=['GET', 'POST'])
