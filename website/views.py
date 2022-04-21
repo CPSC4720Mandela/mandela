@@ -13,8 +13,9 @@ views = Blueprint('views', __name__)
 def home():
     return render_template("home.html", user = current_user)
 
-@views.route('/leaderboard')
+@views.route('/leaderboard', methods=['GET', 'POST'])
 def leaderboard():
+    
     return render_template("leaderboard.html", user = current_user)
 
 @views.route('/settings')
@@ -28,12 +29,13 @@ def game():
             check_val = request.form['Option1']
         except:
             check_val = request.form['Option2']
-        game = Game.query.filter_by(dateofpuzzle = str(datetime.date.today())).first()   
-        
-        if check_val == game.correct_option and current_user.is_authenticated: # answer is correct and the user is authenticated
-            leaderboard = Leaderboard.query.filter_by(id = game.id, user_id = current_user.get_id()).first()
             
-            if leaderboard == None:
+        game = Game.query.filter_by(dateofpuzzle = str(datetime.date.today())).first()
+          
+        if check_val == game.correct_option and current_user.is_authenticated: # answer is correct and the user is authenticated
+            leaderboard = Leaderboard.query.filter_by(game_id = game.id, user_id = current_user.get_id()).first()
+            
+            if leaderboard is None:
                 new_entry = Leaderboard(game_id = game.id, user_id = current_user.get_id(), points = 10)
                 db.session.add(new_entry) # adds new entry to database
                 db.session.commit()
