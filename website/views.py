@@ -1,6 +1,7 @@
 # stores the url endpoints for the actual functioning of website
 # standard routes(url) to our webpage other than authentication
-from flask import Blueprint, render_template, request, flash
+from sre_parse import CATEGORIES
+from flask import Blueprint, render_template, request, flash, redirect, url_for
 from .models import Game, User, Leaderboard
 from flask_login import login_required, current_user, logout_user
 from sqlalchemy import update, text, exc
@@ -15,6 +16,7 @@ def home():
     return render_template("home.html", user = current_user)
 
 @views.route('/leaderboard')
+@login_required
 def leaderboard():
     query = 'select user_id, sum(points) from leaderboard group by game_id, user_id order by sum(points) desc limit 5;'
     query = text(query)
@@ -24,17 +26,15 @@ def leaderboard():
     #return render_template("leaderboard.html", user = current_user)
 
 @views.route('/settings', methods=['GET', 'POST'])
+@login_required
 def settings():
-    
     if request.method == 'POST':
-        
         if request.form['submit_button'] == 'del_account':
             db.engine.execute('delete from leaderboard where user_id = ?', current_user.get_id())
             db.engine.execute('delete from user where id = ?', current_user.get_id())
             logout_user()
             flash('User account has been deleted.', category = 'success')
-            
-            return render_template("login.html", user=current_user)
+            return redirect(url_for('auth.sign_up'))
         
         elif request.form['submit_button'] == 'change_username':
             if request.form['uname']:
@@ -86,20 +86,20 @@ def game():
                 new_entry = Leaderboard(game_id = game.id, user_id = current_user.get_id(), points = 10)
                 db.session.add(new_entry) # adds new entry to database
                 db.session.commit()
-                check = "It's the right answer your score has been updated in the Leaderboard!"
+                flash("It's the right answer your score has been updated in the Leaderboard!", category='success')
                 
             else:
-                check = 'You have already played the game!'
+                flash("You've already played the game!", category='success')
             
-            return render_template("test.html", test = check)
+            return render_template("home.html", user=current_user)
         
         elif check_val == game.correct_option:
-            check = "Congratulations, it's the right answer!"
-            return render_template("test.html", test = check) # right answer but user in not authenticated
+            flash("Congratulations, it's the right answer!", category='success')
+            return redirect(url_for('views.home'))
         
         else:
-            check = "Oops, that's the wrong answer!"
-            return render_template("test.html", test = check) # the wrong answer
+            flash("Oops, that's the wrong answer!", category = 'error')
+            return redirect(url_for('views.game'))
     
     else:
         game = Game.query.filter_by(dateofpuzzle = str(datetime.date.today())).first() # Load the initial page
