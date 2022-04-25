@@ -22,8 +22,13 @@ def leaderboard():
     query = text(query)
     scores = db.engine.execute(query)
     points = [(row[0], row[1]) for row in scores]
-    return render_template("test.html", test = points)
-    #return render_template("leaderboard.html", user = current_user)
+    name = []
+    for entry in range(len(points)):
+        userValue =  db.engine.execute('select userName from user where id = ?',points[entry][0]).first()
+        userValue = str(userValue).replace("('",'').replace("',)",'')
+        name.append(userValue)
+    #return render_template("test.html", test = points)
+    return render_template("leaderboard.html", user = current_user, values=points, userName = name)
 
 @views.route('/settings', methods=['GET', 'POST'])
 @login_required
@@ -103,7 +108,7 @@ def game():
     
     else:
         game = Game.query.filter_by(dateofpuzzle = str(datetime.date.today())).first() # Load the initial page
-        return render_template("game.html", user = current_user, path1 = '..' + game.file1, path2 = '..' + game.file2)
+        return render_template("game.html", user = current_user, path1 = '..' + game.file1, path2 = '..' + game.file2, correctAnswer = game.correct_option)
 
 @views.route('/about')
 def about():

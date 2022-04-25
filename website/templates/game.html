@@ -2,6 +2,21 @@
 {% block content %}
 
 <form method="POST">
+  <style>
+    .button {
+      background-color: #671cc9;
+      border: none;
+      color: white;
+      padding: 20px 34px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 20px;
+      margin: 4px 2px;
+      cursor: pointer;
+      width: 30%;
+    }
+  </style>
     <h3 align="center">Game</h3>
     <center>
         <img src="{{path1}}" alt="Option 1" width="300" height="300">
@@ -10,7 +25,7 @@
         <script>
           function SelectionOfButton(buttonSelection){
             deletion();
-            if(buttonSelection == correct_answer){ 
+            if(buttonSelection == correctAnswer){ 
               Correct();
             }else{
               Incorrect();
@@ -29,8 +44,8 @@
             document.getElementById('Answer').innerHTML = 'Answer: Incorrect!!';
           }
         </script>
-        <button id="Option1" name = "Option1" value="file1" onclick="Correct()">This is the original</button>
-        <button id="Option2" name = "Option2" value="file2" onclick="Incorrect()">This is the original</button>
+        <button name = "Option1" value="file1" onclick="SelectionOfButton()">This is the original</button>
+        <button name = "Option2" value="file2" onclick="SelectionOfButton()">This is the original</button>
         <br>
         <br>
         <p id="Answer">Answer:</p>

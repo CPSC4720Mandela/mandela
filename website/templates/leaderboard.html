@@ -1,3 +1,5 @@
+{% extends "base.html" %} {% block title %}About{% endblock %} 
+{% block content %}
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -223,24 +225,20 @@ Codepen: https://codepen.io/supah/
   </h1>
   <ol>
     <li>
-      <mark>Jerry Wood</mark>
-      <small>315</small>
+      <mark>{{userName[0]}}</mark>
+      <small>{{values[0][1]}}</small>
     </li>
     <li>
-      <mark>Brandon Barnes</mark>
-      <small>301</small>
+      <mark>{{userName[1]}}</mark>
+      <small>{{values[1][1]}}</small>
     </li>
     <li>
-      <mark>Raymond Knight</mark>
-      <small>292</small>
+      <mark>{{userName[2]}}</mark>
+      <small>{{values[2][1]}}</small>
     </li>
     <li>
-      <mark>Trevor McCormick</mark>
-      <small>245</small>
-    </li>
-    <li>
-      <mark>Andrew Fox</mark>
-      <small>203</small>
+      <mark>{{userName[3]}}</mark>
+      <small>{{values[3][1]}}</small>
     </li>
   </ol>
 </div>
@@ -270,3 +268,4 @@ Codepen: https://codepen.io/supah/
 </svg>
 
 </body></html>
+{% endblock %}
