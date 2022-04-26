@@ -1,13 +1,23 @@
 # Mandela Effect Game
 
-http://nik1097.pythonanywhere.com/
+Game Link: http://nik1097.pythonanywhere.com/
+
+Note: For the best experience please render the website on your laptop or computer.
 
 ## Description
 
 This project is based of the idea of the mandela effect, where the influence of culture or another external force cause a large group of people to remember something incorrectly. Some specific examples of this is if curious george has a tail and whether the cartoon is spelled Looney Toons or Looney Tunes. There will be several types of gameplay implemented, with options including puzzle of the day and continuous play. Each puzzle will consist of the number of options (typically two) with the user having one opportunity to select the single correct option. After an option is selected then the user will be notified if they were correct or incorrect in their selection. This information will be stored for their profile so they can see how they rank against other players, including their friends if they invite them to play. 
 
 ## Built With
-Java, SQL, Python
+Java, SQL, Python, HTML, CSS
+
+## Demo of Project
+
+https://user-images.githubusercontent.com/20815651/165301887-6fd4f4c3-efa0-4efd-a711-815127ed7d48.mp4
+
+https://user-images.githubusercontent.com/20815651/165303150-fa2176b0-cb11-4945-beec-5243c7e503a6.mp4
+
+https://user-images.githubusercontent.com/20815651/165303175-440aab88-79c1-4c54-84bd-7347765cb2a8.mp4
 
 ## Installation
 Option 1:
