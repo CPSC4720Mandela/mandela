@@ -1,6 +1,7 @@
 # Mandela Effect Game
 
 Game Link: http://nik1097.pythonanywhere.com/
+Note: For the best experience please render the website on your laptop or computer.
 
 ## Description
 
