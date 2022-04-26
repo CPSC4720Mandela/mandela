@@ -3,43 +3,34 @@
   <form method="POST">
     <body>
     <h3 align="center">Settings</h3>
-    <style>
-      .button {
-        background-color: #671cc9;
-        border: none;
-        color: white;
-        padding: 20px 34px;
-        text-align: center;
-        text-decoration: none;
-        display: block;
-        font-size: 20px;
-        margin: 4px 2px;
-        cursor: pointer;
-        width: 30%;
-      }
-    </style>
     <center>
       <div>
         <input type="color" id="background_color" name="background_color" value="#671cc9" onchange="changeBg(this)">
         <label for="background_color">Background Color</label>
+        <input type="color" id="button_color" name="button_color" value="#671cc9" onchange="changeBtn(this)">
+        <label for="button_color">Button Color</label>
+        </div>
+        <input type="text" id="uname" name="uname" placeholder="Enter new username"><br><br>
+        <button tag = "btn" id="username" name = "submit_button" value="change_username">Change Username</button><br><br>
+        <input type="text" id="pwd" name="org_pwd" placeholder="Enter old password"><br><br>
+        <input type="text" id="pwd1" name="new_pwd" placeholder="Enter new password"><br><br>
+        
+        <button tag = "btn" id="password" name = "submit_button" value="change_password">Change Password</button><br><br>
+        <button tag = "btn" id="delete" name = "submit_button" value="del_account">Delete Account</button>
         <br>
         <script>
           function changeBg(element){
             document.body.style.backgroundColor=element.value;
             sessionStorage.setItem("bg", element.value);
           }
+          function changeBtn(element){
+            let buttons = document.getElementsByTagName("button");
+            for (let i = 0; i < buttons.length; i++) {
+              buttons[i].style.backgroundColor = element.value;
+            }
+            sessionStorage.setItem("btn", element.value);
+          }
         </script>
-      </div>
-    <!--  <a class="button" id="ChangeUsername" href="/signup">Change Username</a> -->
-    <input type="uname" id="uname" name="uname" placeholder="Enter new username"><br><br>
-    <button id="username" name = "submit_button" value="change_username">Change Username</button><br><br>
-    <!-- <a class="button" id="ChangePassword" href="/signup">Change Password</a> -->
-    <input type="password" id="pwd" name="org_pwd" placeholder="Enter old password"><br><br>
-    <input type="password" id="pwd1" name="new_pwd" placeholder="Enter new password"><br><br>
-    
-    <button id="password" name = "submit_button" value="change_password">Change Password</button><br><br>
-    <!-- <a class="button" name = "del_account" value = "del_account" id="DeleteAccount" href="/logout">Delete Account</a> -->
-    <button id="delete" name = "submit_button" value="del_account">Delete Account</button>
     </center>
 </body>
   </form>
