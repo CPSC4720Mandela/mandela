@@ -1,6 +1,30 @@
 {% extends "base.html" %} {% block title %}Sign Up{% endblock %} {% block
     content %}
     <form method="POST">
+      <style>
+        body {
+          min-height: 450px;
+          height: 100vh;
+          margin: 0;
+          background: -webkit-radial-gradient(ellipse farthest-corner at center top, #f39264 0%, #f2606f 100%);
+          background: radial-gradient(ellipse farthest-corner at center top, #f39264 0%, #f2606f 100%);
+          color: #fff;
+          font-family: 'Open Sans', sans-serif;
+        }
+        .button {
+          background-color: #cd4b4b;
+          border: none;
+          color: orangered;
+          padding: 20px 34px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 20px;
+          margin: 4px 30px;
+          cursor: pointer;
+          width: 30%;
+        }
+      </style>
       <h3 align="center">Sign Up</h3>
       <div class="form-group">
         <label for="userName">User Name</label>
