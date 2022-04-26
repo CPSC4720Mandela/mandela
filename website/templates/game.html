@@ -12,24 +12,36 @@
       color: #fff;
       font-family: 'Open Sans', sans-serif;
     }
-    .button {
+
+    h3 {
+      margin: 15px;
+    }
+
+    img {
+      width: 400px;
+      height: 275px;
+      margin: 10px;
+    }
+
+    button {
       background-color: #cd4b4b;
       border: none;
-      color: orangered;
-      padding: 20px 34px;
+      color: white;
+      padding: 10px 20px;
       text-align: center;
       text-decoration: none;
       display: inline-block;
       font-size: 20px;
-      margin: 4px 30px;
+      margin-left: 105px;
+      margin-right: 105px;
       cursor: pointer;
-      width: 30%;
+      width: 200px;
     }
   </style>
-    <h3 align="center">Game</h3>
+    <h3 align="center">Please select the real image:</h3>
     <center>
-        <img src="{{path1}}" alt="Option 1" width="300" height="300">
-        <img src="{{path2}}" alt="Option 2" width="300" height="300">
+        <img src="{{path1}}" alt="Option 1">
+        <img src="{{path2}}" alt="Option 2">
         <br>
         <script>
           function SelectionOfButton(buttonSelection){
@@ -53,11 +65,8 @@
             document.getElementById('Answer').innerHTML = 'Answer: Incorrect!!';
           }
         </script>
-        <button name = "Option1" value="file1" onclick="SelectionOfButton()">This is the original</button>
-        <button name = "Option2" value="file2" onclick="SelectionOfButton()">This is the original</button>
-        <br>
-        <br>
-        <p id="Answer">Answer:</p>
+        <button name = "Option1" value="file1" onclick="SelectionOfButton()">Option 1</button>
+        <button name = "Option2" value="file2" onclick="SelectionOfButton()">Option 2</button>
     </center>
   </form>
   {% endblock %}
