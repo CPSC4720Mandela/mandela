@@ -2,6 +2,8 @@
 
 Game Link: http://nik1097.pythonanywhere.com/
 
+If the above link doesn't work, please check the and update dates for the puzzle in the DB table.
+
 Note: For the best experience please render the website on your laptop or computer.
 
 ## Description
